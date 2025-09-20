@@ -97,8 +97,7 @@ class _PillsScreenState extends State<PillsScreen> {
       // Floating Add Button
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.healthyPurple,
-        onPressed: () {
-        },
+        onPressed: () {},
         child: const Icon(Icons.add, color: Colors.white),
       ),
       body: Column(
@@ -138,11 +137,14 @@ class _PillsScreenState extends State<PillsScreen> {
                         ),
                       ],
                     ),
-                    CircleAvatar(
-                      backgroundColor: Colors.white24,
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white24,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
                       child: IconButton(
-                        onPressed: () {},
                         icon: const Icon(Icons.add, color: Colors.white),
+                        onPressed: () {},
                       ),
                     ),
                   ],
@@ -207,7 +209,7 @@ class _PillsScreenState extends State<PillsScreen> {
                     ),
 
                     const SizedBox(width: 12),
-                    
+
                     Expanded(
                       child: CardWidget(
                         backgroundColor: Colors.white.withOpacity(0.15),
@@ -255,7 +257,9 @@ class _PillsScreenState extends State<PillsScreen> {
                           .map(
                             (f) => Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 4,),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                ),
                                 child: PrimaryButton(
                                   text: f["label"]!,
                                   onPressed: () {
@@ -382,8 +386,7 @@ class _PillsScreenState extends State<PillsScreen> {
                                       ],
                                     ),
                                     IconButton(
-                                      onPressed: () {
-                                      },
+                                      onPressed: () {},
                                       icon: const Icon(Icons.more_vert),
                                     ),
                                   ],
