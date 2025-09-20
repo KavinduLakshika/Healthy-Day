@@ -5,6 +5,7 @@ import 'package:healthy_day_mobile/components/custom_text_field.dart';
 import 'package:healthy_day_mobile/components/primary_button.dart';
 import 'package:healthy_day_mobile/components/icon_button.dart';
 import 'package:healthy_day_mobile/pages/dashboard.dart';
+import 'package:healthy_day_mobile/pages/forgot_password_screen.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -134,8 +135,18 @@ class _AuthScreenState extends State<AuthScreen> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
-                          child: Text(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => ForgotPasswordScreen(
+                                  onBack: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            );
+                          },
+                          child: const Text(
                             "Forgot password?",
                             style: TextStyle(color: AppColors.healthyBlue),
                           ),
